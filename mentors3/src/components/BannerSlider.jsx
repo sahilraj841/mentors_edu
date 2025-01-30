@@ -6,7 +6,7 @@ import { Navigation, Autoplay, Pagination } from 'swiper/modules';
 
 const BannerSlider = () => {
     const images = [
-        "/photos/2.png",
+        "/photos/headbanner1.jpeg",
     ];
 
     return (
@@ -29,7 +29,7 @@ const BannerSlider = () => {
                             <img
                                 src={src}
                                 alt={`Banner ${index + 1}`}
-                                className="w-full h-full object-cover rounded-2xl" // Changed to `object-cover` for better fit
+                                className="w-full h-full object-cover rounded-2xl" 
                             />
                         </SwiperSlide>
                     ))}

@@ -30,6 +30,7 @@ import { useState, useEffect } from "react";
 import BannerSlider from "@/components/BannerSlider";
 import WhyMentors from "@/components/whymentors";
 import MyCourses from "@/components/courses";
+import MessageCard from "@/components/messageAJ"; 
 
 const bannerPhotos = [
   { id: 1, src: "/photos/mentors1.jpeg", alt: "Banner 1" },
@@ -391,61 +392,7 @@ export default function Home() {
     </div>
 
       {/* Message Section */}
-      <section className="py-16 px-4 md:px-8 max-w-7xl mx-auto">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-4xl font-bold text-red-600 text-center mb-12"
-        >
-          Message From AJ Sir
-        </motion.h1>
-
-        <div className="flex flex-col lg:flex-row items-center gap-8">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex-1 space-y-6"
-          >
-            <h2 className="text-2xl font-semibold">Respected Parents & Dear Students,</h2>
-            <p className="text-gray-600">
-            At Mentors EduServ, we believe that the right guidance can transform a student’s future. Our mission is to empower learners with the tools, resources, and mentorship they need to excel academically and personally. Whether you're preparing for competitive exams, need help with specific subjects, or are looking for general academic guidance, we are here to provide the support that fosters success.
-            </p>
-            <p className="text-gray-600">
-            We offer personalized mentoring services tailored to each student's unique needs. Our experienced mentors are dedicated to helping students at all stages of their educational journey—whether they're in school, preparing for entrance exams, or navigating their post-graduate options.
-            </p>
-            <p className="text-gray-600">
-            At Mentors EduServ, we understand that every student is unique. We pride ourselves on our individualized approach to mentoring, using proven methods and real-world experience to help each student unlock their full potential. Through one-on-one sessions, engaging resources, and continuous support, we aim to build not just academic excellence, but also confidence and critical thinking skills.
-            </p>
-            <p className="text-gray-600">
-            At Mentors EduServ, we're more than just tutors—we're partners in your academic journey. Join us today, and let's work together to build the future you deserve.
-            </p>
-            <div className="pt-4">
-              <h3 className="text-xl font-semibold">Anand Jaiswal</h3>
-              <p className="text-gray-600">Founder & CEO, Mentors Eduserv, Patna</p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="lg:w-1/3 flex justify-center items-center"
-          >
-            <div className="relative w-60 h-60 lg:w-72 lg:h-72 mx-auto flex justify-center items-center overflow-hidden rounded-full border-4 border-red-600">
-              <img
-                src="/photos/Aj.png"
-                alt="AJ Sir"
-                className="w-full h-full object-cover"
-                style={{ objectPosition: "top center" }}
-              />
-            </div>
-          </motion.div>
-
-
-        </div>
-      </section>
+      <MessageCard/>
 
       {/* Features Section */}
       <WhyMentors/>
