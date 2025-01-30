@@ -27,6 +27,9 @@ import {
   BookCheck,
 } from "lucide-react";
 import { useState, useEffect } from "react";
+import BannerSlider from "@/components/BannerSlider";
+import WhyMentors from "@/components/whymentors";
+import MyCourses from "@/components/courses";
 
 const bannerPhotos = [
   { id: 1, src: "/photos/mentors1.jpeg", alt: "Banner 1" },
@@ -221,14 +224,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-        <div className="   w-full relative overflow-hidden   ">
-            <img src="/photos/mentorsBanner.jpg" alt="Main Banner"
-            width={1920}
-            height={400}
-            className=" w-full h-auto object-cover "
-            
-             />
-        </div>
+      
+      {/* Banner Head */}
+      <BannerSlider/>
+
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-8 flex flex-col lg:flex-row gap-8">
         {/* Results Section */}
@@ -449,83 +448,10 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 px-4 bg-gray-900">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl font-bold text-white mb-4">Why Mentors</h2>
-            <p className="text-xl text-gray-300">Curious to know what makes us unique?</p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, i) => (
-              <motion.div
-                key={i}
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                variants={cardVariants}
-                viewport={{ once: true }}
-                className="bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition-colors"
-              >
-                <feature.icon className="w-12 h-12 text-yellow-400 mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <WhyMentors/>
 
       {/* Courses Section */}
-      <section className="py-16 px-4 bg-red-50">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-red-600 mb-4">
-              Learn from Kota's Best & Most Experienced Faculties In Muzaffarpur
-            </h2>
-            <p className="text-xl text-gray-600">
-              Every student is our top priority. To provide the best education, we have various Classroom Courses
-              available for JEE, NEET & Foundation.
-            </p>
-          </motion.div>
-
-          <motion.h3
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="text-2xl font-semibold text-red-600 text-center mb-8"
-          >
-            Our Courses
-          </motion.h3>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {courses.map((course, i) => (
-              <motion.div
-                key={i}
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                variants={cardVariants}
-                viewport={{ once: true }}
-                className="bg-white shadow-md rounded-lg p-6 text-center hover:shadow-lg transition-shadow"
-              >
-                <course.icon className="w-16 h-16 text-red-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">{course.title}</h3>
-                <p className="text-gray-600">{course.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <MyCourses/>
     </div>
   );
 }
