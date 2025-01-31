@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import WhatsAppButton from "@/components/WhatsappButton";
+import AdmissionBanner from "@/components/banner";
 import axios from "axios";
 import {
   Select,
@@ -234,6 +235,7 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50">
       
       {/* Banner Head */}
+      <AdmissionBanner/>
       <BannerSlider/>
 
       {/* Main Content */}

@@ -62,12 +62,12 @@ const contactInfo = [
 ];
 
 const socialLinks = [
-  { icon: Facebook, href: "https://www.facebook.com/mentorsedu" },
-  { icon: Twitter, href: "https://twitter.com/mentorsedu" },
-  { icon: Youtube, href: "https://www.youtube.com/mentorsedu" },
-  { icon: Linkedin, href: "https://www.linkedin.com/company/mentorsedu" },
-  { icon: Instagram, href: "https://www.instagram.com/mentorsedu" },
-  { icon: WhatsApp, href: "https://wa.me/919569668800" },
+  { icon: Facebook, href: "https://www.facebook.com/MentorsEduservPage/" },
+  { icon: Twitter, href: "https://x.com/MEduserv" },
+  { icon: Youtube, href: "https://www.youtube.com/@mentors_eduserv" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/mentorseduserv/" },
+  { icon: Instagram, href: "https://www.instagram.com/mentors_eduserv/" },
+  { icon: WhatsApp, href: "https://api.whatsapp.com/send/?phone=9569668800&text&type=phone_number&app_absent=0" },
 ];
 
 export default function Footer() {

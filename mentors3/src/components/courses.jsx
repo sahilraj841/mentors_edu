@@ -1,47 +1,27 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { Card, CardContent } from "@/components/ui/Card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const coursesData = {
   Foundation: [
-    { title: "INFANT STEP", description: "For Class 5th Student Moving to 6th", image: "/course/f5.png" },
-    { title: "PREP STEP", description: "For Class 6th Student Moving to 7th", image: "/course/f6.png" },
-    { title: "FIRST STEP", description: "For Class 7th Student Moving to 8th", image: "/course/f7.png" },
-    { title: "GENESIS", description: "For Class 8th Student Moving to 9th", image: "/course/f8.png" },
-    { title: "CATAPULT", description: "For Class 9th Student Moving to 10th", image: "/course/f9.png" },
+    { title: "INFANT STEP", description: "For Class 5th Student Moving to 6th", image: "/course/f5.png", redirectUrl: "https://www.mentorsedu.com/courses/foundation/" },
+    { title: "PREP STEP", description: "For Class 6th Student Moving to 7th", image: "/course/f6.png", redirectUrl: "https://www.mentorsedu.com/courses/foundation/#PREPSTEP" },
+    { title: "FIRST STEP", description: "For Class 7th Student Moving to 8th", image: "/course/f7.png", redirectUrl: "https://www.mentorsedu.com/courses/foundation/#FIRSTSTEP" },
+    { title: "GENESIS", description: "For Class 8th Student Moving to 9th", image: "/course/f8.png", redirectUrl: "https://www.mentorsedu.com/courses/foundation/#GENESIS" },
+    { title: "CATAPULT", description: "For Class 9th Student Moving to 10th", image: "/course/f9.png", redirectUrl: "https://www.mentorsedu.com/courses/foundation/#CATAPULT" },
   ],
   Engineering: [
-    {
-      title: "GROUND ZERO",
-      description: "For Class 10th Student Moving to 11th (Engineering Stream)",
-      image: "/course/e1.png",
-    },
-    {
-      title: "COUNTDOWN",
-      description: "For Class 11th Student Moving to 12th (Engineering Stream)",
-      image: "/course/e2.png",
-    },
-    { title: "REBOOST", description: "For Class 12th Passed Students (Engineering Stream)", image: "/course/e3.png" },
+    { title: "GROUND ZERO", description: "For Class 10th Student Moving to 11th (Engineering Stream)", image: "/course/e1.png", redirectUrl: "https://www.mentorsedu.com/courses/engineering/#GROUNDZERO" },
+    { title: "COUNTDOWN", description: "For Class 11th Student Moving to 12th (Engineering Stream)", image: "/course/e2.png", redirectUrl: "https://www.mentorsedu.com/courses/engineering/#COUNTDOWN" },
+    { title: "REBOOST", description: "For Class 12th Passed Students (Engineering Stream)", image: "/course/e3.png", redirectUrl: "https://www.mentorsedu.com/courses/engineering/#REBOOST" },
   ],
   Medical: [
-    {
-      title: "MEDICAL GROUND ZERO",
-      description: "For Class 10th Student Moving to 11th (Medical Stream)",
-      image: "/course/m1.png",
-    },
-    {
-      title: "MEDICAL COUNTDOWN",
-      description: "For Class 11th Student Moving to 12th (Medical Stream)",
-      image: "/course/m2.png",
-    },
-    {
-      title: "MEDICAL REBOOST",
-      description: "For Class 12th Passed Students (Medical Stream)",
-      image: "/course/m3.png",
-    },
+    { title: "MEDICAL GROUND ZERO", description: "For Class 10th Student Moving to 11th (Medical Stream)", image: "/course/m1.png", redirectUrl: "https://www.mentorsedu.com/courses/medical/#MEDICALGROUNDZERO" },
+    { title: "MEDICAL COUNTDOWN", description: "For Class 11th Student Moving to 12th (Medical Stream)", image: "/course/m2.png", redirectUrl: "https://www.mentorsedu.com/courses/medical/#MEDICALCOUNTDOWN" },
+    { title: "MEDICAL REBOOST", description: "For Class 12th Passed Students (Medical Stream)", image: "/course/m3.png", redirectUrl: "https://www.mentorsedu.com/courses/medical/#MEDICALREBOOST" },
   ],
 }
 
@@ -84,7 +64,7 @@ export default function MyCourses() {
       container.addEventListener("scroll", checkScrollPosition)
       return () => container.removeEventListener("scroll", checkScrollPosition)
     }
-  }, [selectedCategory]) // Removed unnecessary dependency
+  }, [selectedCategory])
 
   const visibleCourses = coursesData[selectedCategory]
 
@@ -115,9 +95,12 @@ export default function MyCourses() {
         <div className="relative">
           <div ref={coursesContainerRef} className="flex overflow-x-auto gap-6 px-4 py-4 scroll-smooth no-scrollbar">
             {visibleCourses.map((course, index) => (
-              <Card
+              <a
                 key={index}
-                className="min-w-[300px] max-w-[320px] bg-gray-100 rounded-2xl shadow-xl hover:shadow-[0_0_15px_2px_#D7C6B8] transition-all duration-500 ease-in-out transform hover:scale-105 border-2 border-[#F9F4E3]/20 hover:border-[#d5ec3b] hover:ring-4 hover:ring-[#4fe657]"
+                href={course.redirectUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="min-w-[300px] max-w-[320px] bg-gray-100 rounded-2xl shadow-xl hover:shadow-[0_0_15px_2px_#D7C6B8] transition-all duration-500 ease-in-out transform hover:scale-105 border-2 border-[#F9F4E3]/20 hover:border-[#d5ec3b] hover:ring-4 hover:ring-[#4fe657] cursor-pointer"
               >
                 <CardContent className="px-4 py-2">
                   <div className="aspect-[4/3] relative overflow-hidden rounded-t-xl">
@@ -132,7 +115,7 @@ export default function MyCourses() {
                     <p className="text-[#4C3B2F]/80 text-base">{course.description}</p>
                   </div>
                 </CardContent>
-              </Card>
+              </a>
             ))}
           </div>
 

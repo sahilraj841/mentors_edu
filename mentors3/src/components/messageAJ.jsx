@@ -15,7 +15,7 @@ export default function MessageCard() {
 
         {/* Card Content with Light Star-like Gradient */}
         <CardContent className="p-6 md:p-8 bg-gradient-to-r from-yellow-200 via-pink-200 to-indigo-200 rounded-lg shadow-inner">
-          <div className="grid md:grid-cols-[1fr,auto] gap-8 items-start">
+          <div className="grid md:grid-cols-[1fr,auto] gap-8 items-center">
             <div className="space-y-6 text-gray-900">
               <h2 className="text-2xl font-semibold text-gray-800">Respected Parents & Dear Students,</h2>
               <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
@@ -33,17 +33,16 @@ export default function MessageCard() {
               </div>
             </div>
 
-            {/* Circular Frame with Hover Effect for Image */}
-            <div className="relative mx-auto md:mx-0">
-              <div className="w-48 h-48 rounded-full bg-gradient-to-br from-yellow-400 to-white p-1 shadow-2xl transform hover:scale-110 transition-all duration-500 ease-in-out">
-                <div className="w-full h-full rounded-full overflow-hidden relative bg-white transform hover:rotate-6 transition-all duration-500 ease-in-out">
-                  {/* Image with circular frame */}
+            {/* Circular Frame for Centered Image */}
+            <div className="relative flex justify-center">
+              <div className="w-48 h-48 rounded-full bg-gradient-to-br from-yellow-400 to-white p-1 shadow-2xl">
+                <div className="w-full h-full rounded-full overflow-hidden relative bg-white">
+                  {/* Image displayed with full coverage */}
                   <img
                     src={imageUrl}
                     alt="Profile picture"
-                    width={192}
-                    height={192}
                     className="object-cover w-full h-full"
+                    style={{ objectPosition: "center top" }} // Ensure face is centered and visible
                   />
                 </div>
               </div>
