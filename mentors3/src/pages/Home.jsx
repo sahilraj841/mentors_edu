@@ -37,10 +37,16 @@ const bannerPhotos = [
   { id: 1, src: "/photos/mentors1.jpeg", alt: "Banner 1" },
   {
     id: 2,
-    src: "/photos/mentors4.png",
+    src: "/photos/olympiad.png",
     alt: "Banner 2",
   },
-  { id: 3, src: "https://images.pexels.com/photos/256395/pexels-photo-256395.jpeg?auto=compress&cs=tinysrgb&w=600", alt: "Banner 3" },
+  { id: 3, src: "/photos/advance.png", 
+    alt: "Banner 3" 
+  },
+  { id: 4, src: "/photos/neet.png", 
+    alt: "Banner 3" 
+  },
+  
 ];
 
 
@@ -235,19 +241,19 @@ export default function Home() {
         {/* Results Section */}
         <div className="flex-1">
           <div className="bg-gradient-to-r from-red-500 to-red-700 text-white p-6 rounded-t-lg">
-            <h2 className="text-2xl font-bold">JEE ADVANCED RESULT</h2>
+            <h2 className="text-2xl font-bold">ACHIEVEMENTS</h2>
             
           </div>
           {/* Banner Slider */}
           <div className="relative bg-yellow-50 p-6 rounded-b-lg mt-4">
             
-            <div className="relative h-72 sm:h-96 overflow-hidden rounded-lg">
+            <div className="relative h-[500px] sm:h-[450px] w-[800px] overflow-hidden rounded-lg">
               {bannerPhotos.map((photo, index) => (
                 <img
                   key={photo.id}
                   src={photo.src || "/placeholder.svg"}
                   alt={photo.alt}
-                  className={`absolute inset-0 object-cover w-full h-full transition-opacity duration-500 ${
+                  className={`absolute inset-0 object-cover w-full h-full transition-opacity duration-1500 ${
                     index === currentBanner ? "opacity-100" : "opacity-0"
                   }`}
                 />
