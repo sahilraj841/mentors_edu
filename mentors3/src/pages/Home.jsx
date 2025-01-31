@@ -4,6 +4,7 @@ import { Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import WhatsAppButton from "@/components/WhatsappButton";
 import axios from "axios";
 import {
   Select,
@@ -399,6 +400,8 @@ export default function Home() {
 
       {/* Courses Section */}
       <MyCourses/>
+
+      <WhatsAppButton/>
     </div>
   );
 }
