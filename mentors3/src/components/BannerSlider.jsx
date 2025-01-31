@@ -7,10 +7,11 @@ import { Navigation, Autoplay, Pagination } from 'swiper/modules';
 const BannerSlider = () => {
     const images = [
         "/photos/changedBanner.jpeg",
+        
     ];
 
     return (
-        <div className="relative w-full overflow-hidden">
+        <div className="relative w-full overflow-hidden " style={{ maxWidth: '1304px', height: '232px', margin: '0 auto' }}>
             <div className="relative w-full h-[calc(100vw/2)]">
                 {/* Outer Neon Frame */}
                 <div className="absolute inset-0 border-[10px] border-transparent rounded-2xl animate-border-glow"></div>
