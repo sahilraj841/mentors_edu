@@ -38,14 +38,14 @@ const bannerPhotos = [
   { id: 1, src: "/photos/mentors1.jpeg", alt: "Banner 1" },
   {
     id: 2,
-    src: "/photos/olympiad.png",
+    src: "/photos/advance.png",
     alt: "Banner 2",
   },
-  { id: 3, src: "/photos/advance.png", 
+  { id: 3, src: "/photos/neet.png", 
     alt: "Banner 3" 
   },
-  { id: 4, src: "/photos/neet.png", 
-    alt: "Banner 3" 
+  { id: 4, src: "/photos/olympiad.png", 
+    alt: "Banner 4" 
   },
   
 ];
