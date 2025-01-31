@@ -6,7 +6,7 @@ import { Navigation, Autoplay, Pagination } from 'swiper/modules';
 
 const BannerSlider = () => {
     const images = [
-        "/photos/headbanner1.jpeg",
+        "/photos/changedBanner.jpeg",
     ];
 
     return (
