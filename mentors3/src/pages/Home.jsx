@@ -44,7 +44,7 @@ const bannerPhotos = [
     alt: "Banner 3" 
   },
   { id: 4, src: "/photos/olympiad.png", 
-    alt: "Banner 3" 
+    alt: "Banner 4" 
   },
   
 ];
