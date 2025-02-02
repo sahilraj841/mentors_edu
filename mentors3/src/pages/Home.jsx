@@ -235,12 +235,13 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50">
       
       {/* Banner Head */}
-      <AdmissionBanner/>
       <BannerSlider/>
 
       {/* Main Content */}
+      <section id="our-achievement">
       <div className="max-w-7xl mx-auto px-4 py-8 flex flex-col lg:flex-row gap-8">
         {/* Results Section */}
+
         <div className="flex-1">
           <div className="bg-gradient-to-r from-red-500 to-red-700 text-white p-6 rounded-t-lg">
             <h2 className="text-2xl font-bold">ACHIEVEMENTS</h2>
@@ -399,15 +400,19 @@ export default function Home() {
       
     </div>
     </div>
-
+    </section>
       {/* Message Section */}
       <MessageCard/>
 
       {/* Features Section */}
+      <section id="why-mentors">
       <WhyMentors/>
+      </section>
 
       {/* Courses Section */}
+      <section id="courses">
       <MyCourses/>
+      </section>
 
       <WhatsAppButton/>
     </div>

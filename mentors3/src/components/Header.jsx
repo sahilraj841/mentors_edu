@@ -1,15 +1,17 @@
+"use client";
+
 import React, { useState } from "react";
 import { Phone, Menu, X } from "lucide-react";
 
 const navigation = [
-  { name: "Home", id: "home" },
-  { name: "Our Achievement", id: "achievement" },
-  { name: "Courses", id: "courses" },
-  { name: "Batches", id: "batches" },
-  { name: "Why Mentors", id: "why-mentors" },
-  { name: "Testimonials", id: "testimonials" },
-  { name: "News & Media", id: "news-media" },
+  { name: "Home", link: "/" },
+  { name: "Our Achievement", link: "#our-achievement" },
+  { name: "Why Mentors", link: "#why-mentors" },
+  { name: "Courses", link: "#courses" },
+  { name: "Career", link: "https://www.mentorsedu.com/careers/" },
+  { name: "Get In Touch", link: "https://www.mentorsedu.com/contact-us/" },
 ];
+
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,12 +20,15 @@ function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+  const handleLinkClick = (e, link) => {
+    if (link.startsWith("#")) {
+      e.preventDefault();
+      const sectionId = link.substring(1); // Remove the '#' character
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
     }
-    setIsMenuOpen(false); // Close the menu in mobile view after clicking
   };
 
   return (
@@ -40,19 +45,17 @@ function Header() {
           <div className="w-8 h-8 flex items-center justify-center bg-black rounded-full shadow-md">
             <Phone className="w-5 h-5 text-white" />
           </div>
-          <span>Talk to our expert 9569668800
-          </span>
+          <span>Talk to our expert 9569668800</span>
         </a>
       </div>
 
       {/* Navigation */}
-      <nav className="bg-white text-black py-4 px-6 shadow-md">
+      <nav className="bg-white text-black py-4 px-6 shadow-md sticky top-0 z-50">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           {/* Logo */}
           <a
-            href="#home"
+            href="/"
             className="flex items-center focus:outline-none"
-            onClick={() => scrollToSection("home")}
           >
             <img
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-01-20%20at%2012.33.08%20PM-ZkWiXpssgjLNDVK5mj6e4i9OFepWAo.jpeg"
@@ -64,13 +67,14 @@ function Header() {
           {/* Desktop menu */}
           <div className="hidden md:flex gap-6 font-medium text-base">
             {navigation.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
+              <a
+                key={item.name}
+                href={item.link}
                 className="hover:text-yellow-600 transition duration-200 focus:outline-none"
+                onClick={(e) => handleLinkClick(e, item.link)}
               >
                 {item.name}
-              </button>
+              </a>
             ))}
           </div>
 
@@ -87,13 +91,14 @@ function Header() {
         {isMenuOpen && (
           <div className="md:hidden mt-2 bg-white flex flex-col gap-2 shadow-md">
             {navigation.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
+              <a
+                key={item.name}
+                href={item.link}
                 className="block px-4 py-2 text-black hover:bg-yellow-600 hover:text-white transition duration-200 focus:outline-none"
+                onClick={(e) => handleLinkClick(e, item.link)}
               >
                 {item.name}
-              </button>
+              </a>
             ))}
           </div>
         )}
@@ -101,5 +106,6 @@ function Header() {
     </>
   );
 }
+
 
 export default Header;
