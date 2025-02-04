@@ -249,7 +249,7 @@ export default function Home() {
           </div>
           {/* Banner Slider */}
           <div className="relative bg-yellow-50 p-4 sm:p-6 rounded-b-lg mt-4">
-      <div className="relative h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] w-full max-w-[800px] mx-auto overflow-hidden rounded-lg">
+      <div className="relative h-[300px] sm:h-[400px] md:h-[450px] lg:h-[400px] w-full max-w-[800px] mx-auto overflow-hidden rounded-lg">
         {bannerPhotos.map((photo, index) => (
           <img
             key={photo.id}
