@@ -248,33 +248,32 @@ export default function Home() {
             
           </div>
           {/* Banner Slider */}
-          <div className="relative bg-yellow-50 p-6 rounded-b-lg mt-4">
-            
-            <div className="relative h-[500px] sm:h-[450px] w-[800px] overflow-hidden rounded-lg">
-              {bannerPhotos.map((photo, index) => (
-                <img
-                  key={photo.id}
-                  src={photo.src || "/placeholder.svg"}
-                  alt={photo.alt}
-                  className={`absolute inset-0 object-cover w-full h-full transition-opacity duration-1500 ${
-                    index === currentBanner ? "opacity-100" : "opacity-0"
-                  }`}
-                />
-              ))}
-              <button
-                onClick={prevBanner}
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <button
-                onClick={nextBanner}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3 rounded-full"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-            </div>
-          </div>
+          <div className="relative bg-yellow-50 p-4 sm:p-6 rounded-b-lg mt-4">
+      <div className="relative h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] w-full max-w-[800px] mx-auto overflow-hidden rounded-lg">
+        {bannerPhotos.map((photo, index) => (
+          <img
+            key={photo.id}
+            src={photo.src || "/placeholder.svg"}
+            alt={photo.alt}
+            className={`absolute inset-0 object-cover w-full h-full transition-opacity duration-1500 ${
+              index === currentBanner ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
+        <button
+          onClick={prevBanner}
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 sm:p-3 rounded-full"
+        >
+          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+        </button>
+        <button
+          onClick={nextBanner}
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 sm:p-3 rounded-full"
+        >
+          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+        </button>
+      </div>
+    </div>
           <div className="text-center text-red-600 text-xl mt-4 font-semibold">
             Get Ignited...
           </div>
