@@ -1,7 +1,7 @@
 import { Phone } from "lucide-react"
 
 const WhatsAppButton = ({ phoneNumber }) => {
-  const whatsappUrl = `https://wa.me/${9569668800}`
+  const whatsappUrl = `https://wa.me/${8676000041}`
 
   return (
     <a

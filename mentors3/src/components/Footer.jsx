@@ -49,8 +49,8 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Give Us a Call",
-    content: "9569668800",
-    link: "tel:+919569668800",
+    content: "8676000041" ,
+    link: "tel:+918676000041",
     subContent: "(08:00 AM to 08:00 PM)",
   },
   {
