@@ -19,17 +19,55 @@ export default function MessageCard() {
             <div className="space-y-6 text-gray-900">
               <h2 className="text-2xl font-semibold text-gray-800">Respected Parents & Dear Students,</h2>
               <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
-                <p>
-                  At Mentors EduServ, we believe that the right guidance can transform a student's future. Our mission is to empower each student by providing the tools, resources, and mentorship they need to excel academically and personally.
-                </p>
-
-                <p>
-                  We offer personalized mentoring services tailored to each student’s unique needs. Whether preparing for exams or navigating post-graduate options, our experienced mentors are committed to supporting students throughout their educational journey.
-                </p>
-
-                <p>
-                  More than just tutors, Mentors EduServ is a trusted partner in your academic journey. Together, we will shape the future you deserve with dedicated guidance and mentorship.
-                </p>
+              <p>
+                Welcome to the universe of Mentors Eduserv, a name synonymous
+                with quality education and unwavering commitment to nurturing
+                young minds. Our journey began with a simple yet powerful vision:
+                to provide IIT-JEE and Medical aspirants in Bihar access to
+                quality education within their own state.
+              </p>
+              <p>
+                I take immense pride in sharing that over the past 13 years,
+                Mentors Eduserv has helped thousands of students fulfill their
+                dreams of entering India’s top IITs and Medical colleges. By
+                fostering a culture of excellence, we have not only delivered
+                outstanding results in Bihar but also expanded our footprint to
+                Jharkhand. Today, we are proud to bring our proven approach to
+                cities like Patna, Bhagalpur, Saharsa, Gaya, Muzaffarpur, Purnea,
+                Ranchi &amp; Bokaro, helping students thrive in their academic
+                pursuits without leaving their hometowns.
+              </p>
+              <p>
+                At Mentors Eduserv, we believe that every student is unique and
+                success lies in unlocking their individual potential. Our
+                “Individual Mentoring System” stands as a testament to this
+                belief, providing personalized attention, guidance and
+                strategies tailored to each learner’s needs. From a
+                pattern-proof teaching methodology to meticulously designed
+                courses, quality study materials and advanced testing tools,
+                every aspect of our academic framework is engineered to ensure
+                success.
+              </p>
+              <p>
+                Innovation remains at the heart of what we do. As we move
+                forward, our appetite to serve students better continues to
+                grow. With a strong foundation in offline teaching and now also
+                through online and hybrid models, we are evolving to meet the
+                changing educational landscape and serve students far and wide.
+              </p>
+              <p>
+                Our goal is not just to prepare students for exams but to
+                empower them for life. We instill confidence, discipline and a
+                passion for learning, ensuring they emerge not just as achievers
+                but as leaders in their chosen fields.
+              </p>
+              <p>
+                I extend my heartfelt gratitude to the students and parents who
+                have trusted us on this journey. On behalf of my dedicated and
+                efficient academic &amp; administrative team, I assure you of an
+                enriching and unparalleled learning experience. Let us work
+                together to shape the future and turn dreams into reality.
+              </p>
               </div>
             </div>
 
