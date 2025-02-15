@@ -249,13 +249,13 @@ export default function Home() {
           </div>
           {/* Banner Slider */}
           <div className="relative bg-yellow-50 p-4 sm:p-6 rounded-b-lg mt-4">
-      <div className="relative h-[300px] sm:h-[400px] md:h-[450px] lg:h-[400px] w-full max-w-[800px] mx-auto overflow-hidden rounded-lg">
+      <div className="relative h-[300px] sm:h-[400px] md:h-[450px] lg:h-[4x00px] w-full max-w-[900px] mx-auto overflow-hidden rounded-lg">
         {bannerPhotos.map((photo, index) => (
           <img
             key={photo.id}
             src={photo.src || "/placeholder.svg"}
             alt={photo.alt}
-            className={`absolute inset-0 object-cover w-full h-full transition-opacity duration-1500 ${
+            className={`absolute inset-0 object-contain w-full h-full transition-opacity duration-1500 ${
               index === currentBanner ? "opacity-100" : "opacity-0"
             }`}
           />
@@ -369,14 +369,14 @@ export default function Home() {
               <SelectValue placeholder="Select Class" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="6">Class 6</SelectItem>
-              <SelectItem value="7">Class 7</SelectItem>
-              <SelectItem value="8">Class 8</SelectItem>
-              <SelectItem value="9">Class 9</SelectItem>
-              <SelectItem value="10">Class 10</SelectItem>
-              <SelectItem value="11">Class 11</SelectItem>
-              <SelectItem value="12">Class 12</SelectItem>
-              <SelectItem value="12-pass">12th Pass</SelectItem>
+              <SelectItem value="6">Class 6 (IS)</SelectItem>
+              <SelectItem value="7">Class 7 (PS)</SelectItem>
+              <SelectItem value="8">Class 8 (FS)</SelectItem>
+              <SelectItem value="9">Class 9 (GS)</SelectItem>
+              <SelectItem value="10">Class 10 (CP)</SelectItem>
+              <SelectItem value="11">Class 11&12 (GZ/MGZ)</SelectItem>
+              <SelectItem value="12">Class 12 (CD/MCD)</SelectItem>
+              <SelectItem value="12-pass">12th Pass (RB/MRB)</SelectItem>
             </SelectContent>
           </Select>
 

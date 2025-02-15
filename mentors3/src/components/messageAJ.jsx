@@ -10,7 +10,7 @@ export default function MessageCard() {
         
         {/* Message Background with Hover Effect */}
         <div className="bg-gradient-to-r from-red-500 to-red-500 p-6 text-center transform hover:scale-105 transition-all duration-500 ease-in-out">
-          <h1 className="text-3xl font-extrabold text-white">Message From AJ Sir</h1>
+          <h1 className="text-3xl font-extrabold text-white">Director's Message</h1>
         </div>
 
         {/* Card Content with Light Star-like Gradient */}

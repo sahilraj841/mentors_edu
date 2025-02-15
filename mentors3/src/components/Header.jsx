@@ -5,7 +5,7 @@ import { Phone, Menu, X } from "lucide-react";
 
 const navigation = [
   { name: "Home", link: "/" },
-  { name: "Our Achievement", link: "#our-achievement" },
+  { name: "Our Achievement", link: "https://www.mentorsedu.com/" },
   { name: "Why Mentors", link: "#why-mentors" },
   { name: "Courses", link: "#courses" },
   { name: "Career", link: "https://www.mentorsedu.com/careers/" },

@@ -43,7 +43,7 @@ const contactInfo = [
     icon: Home,
     title: "Visit Centre",
     content:
-      "2nd & 3rd Floor, Prateek tower Kalambagh Road, Rajendrapuri Ln, near SDO QUARTER, Muzaffarpur, Bihar 842001",
+      "2nd & 3rd Floor, Prateek tower Kalambagh Road, Rajendrapuri Lane, near SDO QUARTER, Muzaffarpur, Bihar 842001",
     link: "https://www.google.com/maps/dir//2nd+%26+3rd+Floor,+Prateek+tower+Kalambagh+Road,+Rajendrapuri+Ln,+near+SDO+QUARTER,+Muzaffarpur,+Bihar+842001/@26.109928,85.2975949,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x39ed1134bb663039:0x5df1d1844c32aaf9!2m2!1d85.3799915!2d26.1099529?entry=ttu&g_ep=EgoyMDI1MDEyNy4wIKXMDSoASAFQAw%3D%3D",
   },
   {
@@ -62,11 +62,11 @@ const contactInfo = [
 ];
 
 const socialLinks = [
-  { icon: Facebook, href: "https://www.facebook.com/MentorsEduservPage/" },
+  { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61572823487075" },
   { icon: Twitter, href: "https://x.com/MEduserv" },
   { icon: Youtube, href: "https://www.youtube.com/@mentors_eduserv" },
   { icon: Linkedin, href: "https://www.linkedin.com/company/mentorseduserv/" },
-  { icon: Instagram, href: "https://www.instagram.com/mentors_eduserv/" },
+  { icon: Instagram, href: "https://www.instagram.com/mentorsmuzaffarpur?igsh=MTVsc21wbHNuejh5ZQ== " },
   { icon: WhatsApp, href: "https://api.whatsapp.com/send/?phone=9569668800&text&type=phone_number&app_absent=0" },
 ];
 
