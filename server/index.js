@@ -7,7 +7,7 @@ require ("dotenv").config();
 const app = express();
 const PORT = 5001;
 
- 
+
 // Middleware check
 app.use(cors());
 app.use(bodyParser.json());
