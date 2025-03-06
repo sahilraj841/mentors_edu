@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
 
 // ✅ Form Submission Route
 app.post("/submit-form", async (req, res) => {
-  const { name, email, phone, school, course, class: studentClass } = req.body;
+  const { name, email, phone,  course, class: studentClass, school } = req.body;
 
   if (!name || !email || !phone) {
     return res.status(400).json({ message: "❌ Name, email, and phone are required!" });
@@ -44,7 +44,7 @@ app.post("/submit-form", async (req, res) => {
       spreadsheetId: SPREADSHEET_ID,
       range: "Sheet1",
       valueInputOption: "RAW",
-      resource: { values: [[name, email, phone, school, course, studentClass]] },
+      resource: { values: [[name, email, phone,  course, studentClass, school]] },
     });
 
     console.log("✅ Form data saved to Google Sheets!");
