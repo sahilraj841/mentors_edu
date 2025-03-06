@@ -118,7 +118,7 @@ export default function Home() {
     const timer = setInterval(() => {
       setCurrentBanner((prev) => (prev + 1) % bannerPhotos.length);
     }, 5001);
-    return () => clearInterval(timer);
+    return () => clearInterval(timer); 
   }, []);
 
   const nextBanner = () => {
