@@ -200,7 +200,7 @@ export default function Home() {
     // Simulate API call
     try {
       // Log form data to console
-      const response= await axios.post('http://localhost:5001/submit-form',formData);
+      const response= await axios.post('https://backend-mentors.onrender.com/submit-form',formData);
       console.log("Form submitted with data:", formData)
       if(response.status===200){
         toast({
