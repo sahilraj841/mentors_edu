@@ -41,7 +41,7 @@ export default function Consultant() {
       <div className="consultant-container">
         <div className="consultant-card">
           <h2 className="consultant-title">Partner As Education Consultant</h2>
-          <p className="consultant-subtitle">With One Of India’s Leading Education Brands</p>
+          <p className="consultant-subtitle">With One Of North India’s Leading Education Brands</p>
           <form onSubmit={handleSubmit} className="form-grid">
             {/* Full width field */}
             <div className="form-group full-width">
@@ -53,14 +53,17 @@ export default function Consultant() {
                 required
               >
                 <option value="">Select Member Type</option>
-                <option value="student">Student</option>
-                <option value="teacher">Teacher</option>
-                <option value="counselor">Counselor</option>
+                
+                <option value="teacher">Library</option>
+                <option value="stationary">Stationary</option>
+                <option value="hostel">Hostel</option>
+                <option value="mess">Mess</option>
+                <option value="individualAssociate">Individual Associate</option>
               </select>
             </div>
             {/* Three column row */}
             <div className="form-group">
-              <label htmlFor="applicantName">Applicant Name</label>
+              <label htmlFor="applicantName">Applicant Name <span className="required">*</span></label>
               <input
                 type="text"
                 id="applicantName"
@@ -70,7 +73,7 @@ export default function Consultant() {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="phoneNumber">Phone Number</label>
+              <label htmlFor="phoneNumber">Phone Number <span className="required">*</span></label>
               <input
                 type="tel"
                 id="phoneNumber"
@@ -80,7 +83,7 @@ export default function Consultant() {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="whatsappNumber">WhatsApp Number</label>
+              <label htmlFor="whatsappNumber">WhatsApp Number <span className="required">*</span></label>
               <input
                 type="tel"
                 id="whatsappNumber"
@@ -90,7 +93,7 @@ export default function Consultant() {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="email">Email ID</label>
+              <label htmlFor="email">Email ID <span className="required">*</span></label>
               <input
                 type="email"
                 id="email"
@@ -101,7 +104,7 @@ export default function Consultant() {
             </div>
             {/* Full width textarea */}
             <div className="form-group full-width">
-              <label htmlFor="experienceDetails">Experience Details</label>
+              <label htmlFor="experienceDetails">Experience Details <span className="required">*</span></label>
               <textarea
                 id="experienceDetails"
                 value={experienceDetails}
@@ -111,7 +114,7 @@ export default function Consultant() {
             </div>
             {/* Three column row */}
             <div className="form-group">
-              <label htmlFor="city">City</label>
+              <label htmlFor="city">City <span className="required">*</span></label>
               <input
                 type="text"
                 id="city"
@@ -121,7 +124,7 @@ export default function Consultant() {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="stateVal">State</label>
+              <label htmlFor="stateVal">State <span className="required">*</span></label>
               <input
                 type="text"
                 id="stateVal"
@@ -131,7 +134,7 @@ export default function Consultant() {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="pincode">Pincode</label>
+              <label htmlFor="pincode">Pincode <span className="required">*</span></label>
               <input
                 type="text"
                 id="pincode"
@@ -142,7 +145,7 @@ export default function Consultant() {
             </div>
             {/* Three column row */}
             <div className="form-group">
-              <label htmlFor="aadhaarNumber">Aadhaar Number</label>
+              <label htmlFor="aadhaarNumber">Aadhaar Number <span className="required">*</span></label>
               <input
                 type="text"
                 id="aadhaarNumber"
@@ -152,7 +155,7 @@ export default function Consultant() {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="panNumber">PAN Number</label>
+              <label htmlFor="panNumber">PAN Number <span className="required">*</span></label>
               <input
                 type="text"
                 id="panNumber"
@@ -189,6 +192,10 @@ export default function Consultant() {
       </div>
       {/* Inline CSS */}
       <style>{`
+      .required{
+        color:red;
+        margin-left:4px;
+        }
         /* Global reset and improved font */
         * {
           box-sizing: border-box;
