@@ -32,12 +32,12 @@ export default function Consultant() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="individual">Member Type</SelectItem>
-                <SelectItem value="organization">YouTube Influencer</SelectItem>
-                <SelectItem value="institution">Library</SelectItem>
-                <SelectItem value="institution">Stationary</SelectItem>
-                <SelectItem value="institution">Hostel</SelectItem>
-                <SelectItem value="institution">Mess</SelectItem>
-                <SelectItem value="institution">Individual Associate</SelectItem>
+                
+                <SelectItem value="library">Library</SelectItem>
+                <SelectItem value="stationary">Stationary</SelectItem>
+                <SelectItem value="hostel">Hostel</SelectItem>
+                <SelectItem value="mess">Mess</SelectItem>
+                <SelectItem value="individual-associate">Individual Associate</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -58,7 +58,7 @@ export default function Consultant() {
 
           <div className="space-y-2">
             <Label htmlFor="otherNumber" className="flex">Other Number</Label>
-            <Input id="otherNumber" placeholder="Other Number*" />
+            <Input id="otherNumber" placeholder="Other Number" />
           </div>
 
           <div className="space-y-2">
@@ -115,7 +115,7 @@ export default function Consultant() {
           <div className="md:col-span-3 flex items-center gap-2 mt-4">
             <Checkbox id="agreement" checked={agreed} onCheckedChange={setAgreed} />
             <Label htmlFor="agreement" className="font-normal">
-              I agree to be contacted by the team of Motion
+              I agree to be contacted by the team of Mentors Eduserv
             </Label>
           </div>
 

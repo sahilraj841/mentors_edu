@@ -10,6 +10,7 @@ const navigation = [
   { name: "Courses", link: "#courses" },
   { name: "Career", link: "https://www.mentorsedu.com/careers/" },
   { name: "Get In Touch", link: "https://www.mentorsedu.com/contact-us/" },
+  { name: "Associate-Consultant", link:"/consultant"},
 ];
 
 
