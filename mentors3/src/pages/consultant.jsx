@@ -1,368 +1,138 @@
-import React, { useState } from 'react';
+"use client"
+
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Checkbox } from "@/components/ui/checkbox"
+import AboutUs from '@/components/ConsultantAboutUs'
 
 export default function Consultant() {
-  // State hooks for each form field
-  const [memberType, setMemberType] = useState('');
-  const [applicantName, setApplicantName] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [whatsappNumber, setWhatsappNumber] = useState('');
-  const [email, setEmail] = useState('');
-  const [experienceDetails, setExperienceDetails] = useState('');
-  const [city, setCity] = useState('');
-  const [stateVal, setStateVal] = useState('');
-  const [pincode, setPincode] = useState('');
-  const [aadhaarNumber, setAadhaarNumber] = useState('');
-  const [panNumber, setPanNumber] = useState('');
-  const [agree, setAgree] = useState(false);
-
-  // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const formData = {
-      memberType,
-      applicantName,
-      phoneNumber,
-      whatsappNumber,
-      email,
-      experienceDetails,
-      city,
-      state: stateVal,
-      pincode,
-      aadhaarNumber,
-      panNumber,
-      agree,
-    };
-    console.log('Form Data:', formData);
-    // TODO: Submit the formData to your backend API
-  };
+  const [agreed, setAgreed] = useState(false)
 
   return (
     <>
-      <div className="consultant-container">
-        <div className="consultant-card">
-          <h2 className="consultant-title">Partner As Education Consultant</h2>
-          <p className="consultant-subtitle">With One Of North India’s Leading Education Brands</p>
-          <form onSubmit={handleSubmit} className="form-grid">
-            {/* Full width field */}
-            <div className="form-group full-width">
-              <label htmlFor="memberType">Member Type</label>
-              <select
-                id="memberType"
-                value={memberType}
-                onChange={(e) => setMemberType(e.target.value)}
-                required
-              >
-                <option value="">Select Member Type</option>
-                
-                <option value="teacher">Library</option>
-                <option value="stationary">Stationary</option>
-                <option value="hostel">Hostel</option>
-                <option value="mess">Mess</option>
-                <option value="individualAssociate">Individual Associate</option>
-              </select>
-            </div>
-            {/* Three column row */}
-            <div className="form-group">
-              <label htmlFor="applicantName">Applicant Name <span className="required">*</span></label>
-              <input
-                type="text"
-                id="applicantName"
-                value={applicantName}
-                onChange={(e) => setApplicantName(e.target.value)}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="phoneNumber">Phone Number <span className="required">*</span></label>
-              <input
-                type="tel"
-                id="phoneNumber"
-                value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="whatsappNumber">WhatsApp Number <span className="required">*</span></label>
-              <input
-                type="tel"
-                id="whatsappNumber"
-                value={whatsappNumber}
-                onChange={(e) => setWhatsappNumber(e.target.value)}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email ID <span className="required">*</span></label>
-              <input
-                type="email"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-            {/* Full width textarea */}
-            <div className="form-group full-width">
-              <label htmlFor="experienceDetails">Experience Details <span className="required">*</span></label>
-              <textarea
-                id="experienceDetails"
-                value={experienceDetails}
-                onChange={(e) => setExperienceDetails(e.target.value)}
-                rows="3"
-              />
-            </div>
-            {/* Three column row */}
-            <div className="form-group">
-              <label htmlFor="city">City <span className="required">*</span></label>
-              <input
-                type="text"
-                id="city"
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="stateVal">State <span className="required">*</span></label>
-              <input
-                type="text"
-                id="stateVal"
-                value={stateVal}
-                onChange={(e) => setStateVal(e.target.value)}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="pincode">Pincode <span className="required">*</span></label>
-              <input
-                type="text"
-                id="pincode"
-                value={pincode}
-                onChange={(e) => setPincode(e.target.value)}
-                required
-              />
-            </div>
-            {/* Three column row */}
-            <div className="form-group">
-              <label htmlFor="aadhaarNumber">Aadhaar Number <span className="required">*</span></label>
-              <input
-                type="text"
-                id="aadhaarNumber"
-                value={aadhaarNumber}
-                onChange={(e) => setAadhaarNumber(e.target.value)}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="panNumber">PAN Number <span className="required">*</span></label>
-              <input
-                type="text"
-                id="panNumber"
-                value={panNumber}
-                onChange={(e) => setPanNumber(e.target.value)}
-                required
-              />
-            </div>
-            {/* Full width checkbox */}
-            <div className="form-group full-width checkbox-group">
-              <label>
-                <input
-                  type="checkbox"
-                  checked={agree}
-                  onChange={(e) => setAgree(e.target.checked)}
-                  required
-                />{' '}
-                I agree to be contacted by the team of Mentors
-              </label>
-            </div>
-            {/* Note and Submit */}
-            <div className="form-group full-width">
-              <p className="note">
-                It is not a full-time employment opportunity with Mentors and is only part-time counselling.
-              </p>
-            </div>
-            <div className="form-group full-width">
-              <button type="submit" className="submit-btn">
-                SUBMIT
-              </button>
-            </div>
-          </form>
+      <div className="max-w-6xl mx-auto px-4 py-8">
+        <div className="text-center mb-10">
+          <h1 className="text-3xl md:text-4xl font-bold text-[#B22222] mb-2">Partner As Education Consultant</h1>
+          <h2 className="text-2xl md:text-3xl font-bold text-[#B22222]">
+            With One Of India&apos;s Leading Education Brands
+          </h2>
         </div>
+
+        <form className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-6">
+          <div className="space-y-2">
+            <Label htmlFor="memberType" className="flex">
+              Member Type <span className="text-red-500 ml-1">*</span>
+            </Label>
+            <Select>
+              <SelectTrigger id="memberType">
+                <SelectValue placeholder="Member Type" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="individual">Member Type</SelectItem>
+                <SelectItem value="organization">YouTube Influencer</SelectItem>
+                <SelectItem value="institution">Library</SelectItem>
+                <SelectItem value="institution">Stationary</SelectItem>
+                <SelectItem value="institution">Hostel</SelectItem>
+                <SelectItem value="institution">Mess</SelectItem>
+                <SelectItem value="institution">Individual Associate</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="applicantName" className="flex">
+              Applicant Name <span className="text-red-500 ml-1">*</span>
+            </Label>
+            <Input id="applicantName" placeholder="Applicant Name" />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="whatsappNumber" className="flex">
+              WhatsApp Number <span className="text-red-500 ml-1">*</span>
+            </Label>
+            <Input id="whatsappNumber" placeholder="Contact Number*" />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="otherNumber" className="flex">Other Number</Label>
+            <Input id="otherNumber" placeholder="Other Number*" />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="email" className="flex">
+              Email Id <span className="text-red-500 ml-1">*</span>
+            </Label>
+            <Input id="email" type="email" placeholder="Email*" />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="experienceDetails" className="flex">
+              Experience Details <span className="text-red-500 ml-1">*</span>
+            </Label>
+            <Input id="experienceDetails" placeholder="Experience Details*" />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="city" className="flex">
+              City <span className="text-red-500 ml-1">*</span>
+            </Label>
+            <Input id="city" placeholder="City*" />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="state" className="flex">
+              State <span className="text-red-500 ml-1">*</span>
+            </Label>
+            <Input id="state" placeholder="State*" />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="pincode" className="flex">
+              Pincode <span className="text-red-500 ml-1">*</span>
+            </Label>
+            <Input id="pincode" placeholder="Pincode*" />
+          </div>
+
+          {/* Updated Aadhaar field */}
+          <div className="space-y-2">
+            <Label htmlFor="adharCard" className="flex">
+              Aadhaar Number <span className="text-red-500 ml-1">*</span>
+            </Label>
+            <Input id="adharCard" type="text" placeholder="Aadhaar Number" />
+          </div>
+
+          {/* Updated PAN field */}
+          <div className="space-y-2">
+            <Label htmlFor="panCard" className="flex">
+              PAN Number <span className="text-red-500 ml-1">*</span>
+            </Label>
+            <Input id="panCard" type="text" placeholder="PAN Number" />
+          </div>
+
+          <div className="md:col-span-3 flex items-center gap-2 mt-4">
+            <Checkbox id="agreement" checked={agreed} onCheckedChange={setAgreed} />
+            <Label htmlFor="agreement" className="font-normal">
+              I agree to be contacted by the team of Motion
+            </Label>
+          </div>
+
+          <div className="md:col-span-3 text-center text-gray-500 mt-2">
+            It is not a full-time employment opportunity with Motion and is only part-time counselling.
+          </div>
+
+          <div className="md:col-span-3 flex justify-center mt-6">
+            <Button type="submit" className="bg-green-500 hover:bg-green-600 text-white px-8 py-2">
+              SUBMIT
+            </Button>
+          </div>
+        </form>
       </div>
-      {/* Inline CSS */}
-      <style>{`
-      .required{
-        color:red;
-        margin-left:4px;
-        }
-        /* Global reset and improved font */
-        * {
-          box-sizing: border-box;
-        }
-        body, input, select, textarea {
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        /* Background container with image overlay and smooth gradient */
-        .consultant-container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 2rem;
-          background: linear-gradient(135deg, rgba(224,247,250,0.85), rgba(241,248,233,0.85)), url('https://source.unsplash.com/1600x900/?education,technology');
-          background-size: cover;
-          background-position: center;
-          min-height: 100vh;
-          width: 100%;
-        }
-        
-        /* Card styling with enhanced shadow and border radius */
-        .consultant-card {
-          background: rgba(255,255,255,0.98);
-          padding: 2.5rem;
-          border-radius: 16px;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-          width: 100%;
-          max-width: 1200px;
-          animation: fadeIn 0.8s ease-in-out;
-        }
-        
-        /* Titles */
-        .consultant-title {
-          margin-bottom: 0.5rem;
-          font-size: 2.4rem;
-          text-align: center;
-          color: #222;
-        }
-        
-        .consultant-subtitle {
-          margin-bottom: 1.5rem;
-          text-align: center;
-          color: #555;
-          font-size: 1.2rem;
-        }
-        
-        /* Grid layout for form with three columns */
-        .form-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 1.2rem;
-        }
-        
-        /* Full width items spanning all three columns */
-        .full-width {
-          grid-column: span 3;
-        }
-        
-        /* Form groups */
-        .form-group {
-          display: flex;
-          flex-direction: column;
-        }
-        
-        .form-group label {
-          margin-bottom: 0.5rem;
-          font-weight: 600;
-          color: #333;
-        }
-        
-        /* Input styling with subtle shadow and transition */
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-          padding: 0.8rem;
-          border: 1px solid #ccc;
-          border-radius: 8px;
-          font-size: 1rem;
-          transition: border 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-          border-color: #007bff;
-          box-shadow: 0 0 8px rgba(0,123,255,0.4);
-          outline: none;
-        }
-        
-        /* Checkbox styling */
-        .checkbox-group {
-          flex-direction: row;
-          align-items: center;
-        }
-        
-        .checkbox-group input {
-          margin-right: 0.5rem;
-          width: 20px;
-          height: 20px;
-        }
-        
-        /* Note text */
-        .note {
-          font-style: italic;
-          margin-bottom: 1.2rem;
-          color: #777;
-          font-size: 0.95rem;
-        }
-        
-        /* Submit button with hover and active effects */
-        .submit-btn {
-          background: #007bff;
-          color: #fff;
-          border: none;
-          padding: 1rem;
-          width: 100%;
-          border-radius: 8px;
-          font-size: 1.15rem;
-          font-weight: bold;
-          cursor: pointer;
-          transition: background 0.3s ease, transform 0.2s ease;
-        }
-        
-        .submit-btn:hover {
-          background: #0056b3;
-          transform: translateY(-2px);
-        }
-        
-        .submit-btn:active {
-          transform: translateY(0);
-        }
-        
-        /* Fade in animation */
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* Responsive adjustments for smaller screens */
-        @media (max-width: 992px) {
-          .form-grid {
-            grid-template-columns: repeat(2, 1fr);
-          }
-          .full-width {
-            grid-column: span 2;
-          }
-        }
-        
-        @media (max-width: 600px) {
-          .form-grid {
-            grid-template-columns: 1fr;
-          }
-          .full-width {
-            grid-column: span 1;
-          }
-          .consultant-card {
-            padding: 1.5rem;
-          }
-          .consultant-title {
-            font-size: 1.8rem;
-          }
-          .consultant-subtitle {
-            font-size: 1rem;
-          }
-        }
-      `}</style>
+      <section>
+        <AboutUs />
+      </section>
     </>
-  );
+  )
 }
