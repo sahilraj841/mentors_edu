@@ -5,12 +5,49 @@ const path = require("path");
 const { google } = require("googleapis");
 const axios = require("axios"); // For making API requests
 require("dotenv").config();
+const nodemailer = require("nodemailer");
 
 const app = express();
 const PORT = 5001;
 
 app.use(cors());
 app.use(bodyParser.json());
+
+const transporter=nodemailer.createTransport({
+  service:"gmail",
+  auth:{
+    user:process.env.EMAIL_USER,
+    pass:process.env.EMAIL_PASS
+  }
+});
+app.post("/send-email", async(req,res)=>{
+  const{email, formData}=req.body;
+  const mailOptions={
+    from:email,
+    to:"sahilraj841@gmail.com",
+    subject:"New Consultant Application",
+    html: `
+      <h2>New Consultant Application</h2>
+      <p><strong>Member Type:</strong> ${formData.memberType}</p>
+      <p><strong>Applicant Name:</strong> ${formData.applicantName}</p>
+      <p><strong>WhatsApp Number:</strong> ${formData.whatsappNumber}</p>
+      <p><strong>Other Number:</strong> ${formData.otherNumber}</p>
+      <p><strong>Email:</strong> ${formData.email}</p>
+      <p><strong>Experience Details:</strong> ${formData.experienceDetails}</p>
+      <p><strong>City:</strong> ${formData.city}</p>
+      <p><strong>State:</strong> ${formData.state}</p>
+      <p><strong>Pincode:</strong> ${formData.pincode}</p>
+      <p><strong>Aadhar Card:</strong> ${formData.adharCard}</p>
+      <p><strong>PAN Card:</strong> ${formData.panCard}</p>
+    `,
+  };
+  try {
+    await transporter.sendMail(mailOptions);
+    res.json({ message: "Email sent successfully!" });
+  } catch (error) {
+    res.status(500).json({ message: "Error sending email", error });
+  }
+})
 
 // ✅ Google Sheets Configuration
 const CREDENTIALS_PATH = path.join(__dirname, process.env.GOOGLE_APPLICATION_CREDENTIALS);
