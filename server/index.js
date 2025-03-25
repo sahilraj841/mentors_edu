@@ -24,7 +24,7 @@ app.post("/send-email", async(req,res)=>{
   const{email, formData}=req.body;
   const mailOptions={
     from:email,
-    to:"sahilraj841@gmail.com",
+    to:"madhusudangyanwani@gmail.com",
     subject:"New Consultant Application",
     html: `
       <h2>New Consultant Application</h2>
